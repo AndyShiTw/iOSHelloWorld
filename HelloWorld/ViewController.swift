@@ -21,11 +21,19 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showMessage(sender : UIButton){
-        let alertController = UIAlertController(title:"hello",message:"world",preferredStyle:UIAlertControllerStyle.alert);
+        // 按了哪個按鈕
+        let selectedButton = sender;
         
-        alertController.addAction(UIAlertAction(title:"OK",style:UIAlertActionStyle.default,handler:nil))
-        
-        present(alertController,animated:true,completion:nil);
+        if let wordToLookUp = selectedButton.titleLabel?.text {
+            var emojiDict = ["😈" : "Devil" , "🤮" : "Vomit" , "👽" : "ET" , "🙀" : "CatScale" , "👅" : "tongue"];
+            var mean = emojiDict[wordToLookUp];
+            
+            let alertController = UIAlertController(title:wordToLookUp,message:mean,preferredStyle:UIAlertControllerStyle.alert);
+            
+            alertController.addAction(UIAlertAction(title:"OK",style:UIAlertActionStyle.default,handler:nil))
+            
+            present(alertController,animated:true,completion:nil);
+        }
     }
 }
 
