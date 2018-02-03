@@ -25,8 +25,8 @@ class ViewController: UIViewController {
         let selectedButton = sender;
         
         if let wordToLookUp = selectedButton.titleLabel?.text {
-            var emojiDict = ["😈" : "Devil" , "🤮" : "Vomit" , "👽" : "ET" , "🙀" : "CatScale" , "👅" : "tongue"];
-            var mean = emojiDict[wordToLookUp];
+            let emojiDict = ["😈" : "Devil" , "🤮" : "Vomit" , "👽" : "ET" , "🙀" : "CatScale" , "👅" : "tongue"];
+            let mean = emojiDict[wordToLookUp];
             
             let alertController = UIAlertController(title:wordToLookUp,message:mean,preferredStyle:UIAlertControllerStyle.alert);
             
